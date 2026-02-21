@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marsvin i rosa</title>
+  <meta name="description" content="En rosa liten hyllning till marsvin." />
+  <style>
+    :root{
+      --bg:#ff4fa7;
+      --bg2:#ff86c8;
+      --fg:#220013;
+      --card: rgba(255,255,255,.55);
+      --stroke: rgba(34,0,19,.18);
+      --hot:#ff1f8f;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--fg);
+      min-height:100vh;
+      background:
+        radial-gradient(900px 500px at 20% 20%, rgba(255,255,255,.45), transparent 55%),
+        radial-gradient(900px 600px at 80% 30%, rgba(255,255,255,.28), transparent 60%),
+        linear-gradient(135deg, var(--bg), var(--bg2));
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+    .card{
+      width:min(920px, 100%);
+      background: var(--card);
+      border:1px solid var(--stroke);
+      border-radius:18px;
+      box-shadow: 0 20px 60px rgba(34,0,19,.25);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+    }
+    header{
+      padding:18px 22px;
+      background: rgba(255,255,255,.35);
+      border-bottom:1px solid var(--stroke);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .dot{width:10px;height:10px;border-radius:50%; background:var(--hot); box-shadow:0 0 16px rgba(255,31,143,.6)}
+    main{ padding:22px; display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; }
+    @media (max-width: 860px){ main{ grid-template-columns:1fr; } }
+    h1{ margin:8px 0 10px; font-size: clamp(28px, 4vw, 42px); line-height:1.05; }
+    p{ margin:10px 0; line-height:1.55; }
+    .box{
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.45);
+      border-radius:16px;
+      padding:16px;
+    }
+    .list{ margin:0; padding-left:18px; }
+    .list li{ margin:8px 0; }
+    .btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(34,0,19,.22);
+      background: rgba(255,255,255,.55);
+      color:var(--fg);
+      text-decoration:none;
+      font-weight:700;
+    }
+    .btn:hover{ background: rgba(255,255,255,.75); }
+    footer{ padding:14px 22px; border-top:1px solid var(--stroke); font-size:13px; opacity:.85; }
+    .ascii{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      white-space: pre;
+      margin:0;
+      line-height:1.25;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <header>
+      <div class="badge"><span class="dot" aria-hidden="true"></span> Marsvin-rosa</div>
+      <div style="font-weight:700;">Status: fluffig</div>
+    </header>
+
+    <main>
+      <section>
+        <h1>En rosa hemsida om marsvin.</h1>
+        <p>Marsvin är små, runda, nyfikna och låter som om de driver ett litet callscenter i fickformat. Det här är deras estetik-portal.</p>
+
+        <div class="box">
+          <strong>Best practices (för marsvin):</strong>
+          <ul class="list">
+            <li>Mer hö än du tror är rimligt.</li>
+            <li>Två är bättre än en (sociala djur).</li>
+            <li>Gömställen: ja.</li>
+            <li>Gurka: i kontrollerade mängder.</li>
+          </ul>
+          <a class="btn" href="#" id="btn">Ge mig ett WHEEK</a>
+        </div>
+      </section>
+
+      <aside class="box">
+        <strong>Marsvin (ASCII edition)</strong>
+        <p class="ascii">
+  (\__/)
+  (•ㅅ•)  wheek
+  / 　 づ
+        </p>
+        <p style="margin:0;">Färgskala: 100% rosa. Självrespekt: valfri.</p>
+      </aside>
+    </main>
+
+    <footer>
+      Byggd statiskt på GitHub Pages. /nix
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      const sounds = ['WHEEK!', 'wheek wheek', 'WHEEEEK!!', '...wheek?'];
+      alert(sounds[Math.floor(Math.random()*sounds.length)]);
+    });
+  </script>
+</body>
+</html>
